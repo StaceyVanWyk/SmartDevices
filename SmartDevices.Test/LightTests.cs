@@ -55,5 +55,21 @@ namespace SmartDevices.Test
         
         }
 
+        [Fact]
+
+        public void Toggle_ShouldTurnLightOn_WhenLightIsOff() 
+        
+        {
+            // Arrange
+            Light light = new Light("Kitchen Light");
+
+            //Act
+            light.Toggle();
+
+            //Assert
+            Assert.True(light.IsOn);
+            Assert.Equal("On", light.Status);
+        
+        }
     }//Ending of class
 }

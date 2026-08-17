@@ -48,7 +48,7 @@ namespace SmartDevices
             }
             else
             {
-                TurnOff();
+                TurnOn();
             }
 
         }
