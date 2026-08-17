@@ -4,7 +4,23 @@ using System.Text;
 
 namespace SmartDevices.Devices
 {
-    internal class DoorSensor
+    public class DoorSensor : Device
+
     {
-    }
+
+        public DoorSensor(string name) : base(name) {
+        }
+
+        public override string Report()
+        {
+            return "";
+        }
+
+        public bool IsOpen { get; private set; }
+
+        // counter
+        private int openingCount;
+
+    }// End of class
+
 }
