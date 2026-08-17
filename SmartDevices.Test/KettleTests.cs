@@ -21,6 +21,23 @@ namespace SmartDevices.Test
 
             //Assert
             Assert.Equal(2200, watts);       
-        }g
+        }
+
+        [Fact]
+
+        public void RecordHour_ShouldAdd2200WattsOfEnergy_WhenKettleIsOn()
+        
+        { // Arrange
+            Kettle kettle = new Kettle("Kitchen Kettle");
+            kettle.TurnOn();
+
+            //Act 
+            kettle.RecordHour();
+
+            // Assert
+            Assert.Equal(2.2, kettle.TotalKilowattHours);
+
+        
+        }
     }// End of class
 }
