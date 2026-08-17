@@ -4,7 +4,22 @@ using System.Text;
 
 namespace SmartDevices.Devices
 {
-    internal class Thermostat
+    public  class Thermostat : Device
     {
-    }
+
+        public Thermostat(string name) : base(name) 
+        {
+        
+        }
+
+        public double TargetTemperature { get; private set; }
+
+        public double CurrentTemperature { get; private set; }
+
+
+        public override string Report()
+        { 
+          return $"{Name} | Target: {TargetTemperature}°C | Current: {CurrentTemperature}°C";
+        }
+    }//End of class
 }
