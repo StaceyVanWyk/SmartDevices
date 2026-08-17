@@ -21,6 +21,12 @@ namespace SmartDevices.Devices
         // counter
         private int openingCount;
 
+        public void RecordOpening() 
+        {
+            IsOpen = true;
+            openingCount++;
+        }
+
     }// End of class
 
 }
