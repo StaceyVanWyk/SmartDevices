@@ -108,5 +108,18 @@ namespace SmartDevices.Test
 
         
         }
+        [Fact]
+        public void RecordHour_ShouldAddNoEnegery_WhenLightIsOff()
+        {
+            //Arrange
+            Light light = new Light("Kitchen Light");
+
+            //Act
+
+            light.RecordHour();
+
+            //Assert
+            Assert.Equal(0, light.TotalKilowattHours);
+        }
     }//Ending of class
 }
