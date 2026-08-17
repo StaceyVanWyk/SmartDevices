@@ -12,8 +12,21 @@ namespace SmartDevices.Devices
         }
 
         public override string Report()
+
         {
-            return "";
+            string status ;
+
+            if (IsOpen)
+            {
+                status = "Open";
+            }
+            else
+            {
+                status = "Closed";
+            }
+
+
+            return $"{Name} | {status} | opened {openingCount} times today";
         }
 
         public bool IsOpen { get; private set; }
