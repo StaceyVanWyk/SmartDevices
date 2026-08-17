@@ -13,6 +13,7 @@ namespace SmartDevices.Devices
             Name = name;
         }
 
+        // Property 
         public string Status {
 
             get;
