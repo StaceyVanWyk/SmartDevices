@@ -20,5 +20,21 @@ namespace SmartDevices.Test
             //Assert
             Assert.Equal(12, watts);
         }
+
+        [Fact]
+
+        public void RecordHour_ShouldAddEnergy_WhenCameraIsOn()
+        {
+            //Arrange
+            SecurityCamera camera = new SecurityCamera("Front Camera");
+            camera.TurnOn();
+
+            //Act
+            camera.RecordHour();
+
+            //Assert
+            Assert.Equal(0.012, camera.TotalKilowattHours);
+        
+        }
     }// End of class
 }
