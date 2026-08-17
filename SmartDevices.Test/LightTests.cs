@@ -38,7 +38,22 @@ namespace SmartDevices.Test
             Assert.Equal("On", light.Status);
         
         }
+        [Fact]
 
+        public void TurnOff_ShouldTurnLightOff()
+        
+        { // Arrange
+            Light light = new Light("Kitchen Light");
+
+            // Act
+
+            light.TurnOff();
+
+            //Assert
+            Assert.False(light.IsOn);
+            Assert.Equal("Off", light.Status);
+        
+        }
 
     }//Ending of class
 }
