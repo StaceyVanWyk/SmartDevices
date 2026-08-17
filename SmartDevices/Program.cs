@@ -25,6 +25,18 @@ namespace SmartDevices
             light.TurnOn();
             camera.TurnOn();
 
+            for (int hour = 0; hour <24; hour ++)
+            {
+                foreach (Device device in devices)
+                {
+                    if (device is SwitchableDevice switchable)
+                     {
+
+                        switchable.RecordHour();
+                        }
+                }
+            }
+
         }
     }
 }
