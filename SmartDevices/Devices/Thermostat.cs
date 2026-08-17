@@ -21,5 +21,13 @@ namespace SmartDevices.Devices
         { 
           return $"{Name} | Target: {TargetTemperature}°C | Current: {CurrentTemperature}°C";
         }
+
+
+        public void SetTargetTemperature(double temperature)
+        {
+            TargetTemperature = temperature;
+
+        
+        }
     }//End of class
 }
