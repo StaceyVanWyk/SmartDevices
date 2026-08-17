@@ -1,10 +1,21 @@
-﻿using System;
+﻿using SmartDevices.Devices;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
 namespace SmartDevices
 {
-    internal class SwitchableDevice
+    public abstract class SwitchableDevice : Device
     {
+
+
+
+        public SwitchableDevice(string name) : base(name)
+        {
+
+        }
+
+
+
     }
 }
