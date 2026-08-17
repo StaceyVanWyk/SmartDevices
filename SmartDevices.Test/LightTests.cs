@@ -121,5 +121,24 @@ namespace SmartDevices.Test
             //Assert
             Assert.Equal(0, light.TotalKilowattHours);
         }
+
+        [Fact]
+
+        public void RecordHour_ShouldAccumulateEngery_WhenLightIsOn()
+        
+        {
+            // Arrange
+            Light light = new Light("Kitchen Light");
+            light.TurnOn();
+
+            // Act
+            light.RecordHour();
+            light.RecordHour();
+            light.RecordHour();
+
+            // Assert
+            Assert.Equal(0.027, light.TotalKilowattHours, 3);
+        
+        }
     }//Ending of class
 }
