@@ -53,5 +53,35 @@ namespace SmartDevices.Test
             Assert.Contains("opened 3 times today",report);
 
         }
+        [Fact]
+        public void RecordOpening_ShouldIncreaseOpeningCount()
+        {
+            // Arrange
+            DoorSensor door = new DoorSensor("Front Door");
+
+            // Act
+            door.RecordOpening();
+            door.RecordOpening();
+            door.RecordOpening();
+
+            string report = door.Report();
+
+            // Assert
+            Assert.Contains("opened 3 times today", report);
+        }
+
+        [Fact]
+        public void NewDoorSensor_ReportShouldShowClosed()
+        {
+            // Arrange
+            DoorSensor door = new DoorSensor("Front Door");
+
+            // Act
+            string report = door.Report();
+
+            // Assert
+            Assert.Contains("Closed", report);
+            Assert.Contains("opened 0 times today", report);
+        }
     }// End of class
 }

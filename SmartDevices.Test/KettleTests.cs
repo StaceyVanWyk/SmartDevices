@@ -39,5 +39,38 @@ namespace SmartDevices.Test
 
         
         }
+
+
+        [Fact]
+
+        public void NewKettle_ShouldBeOff()
+        {
+            // Arrange
+            Kettle kettle = new Kettle("Kitchen Kettle");
+
+            //Act
+
+            bool result = kettle.IsOn;
+
+            //Assert
+            Assert.False(result);
+
+        }
+
+        [Fact]
+
+        public void RecordHour_ShouldAddNoEnergy_WhenKettleIsOff()
+        {
+            //Arrange
+            Kettle kettle = new Kettle("Kitchen Kettle");
+
+
+            // Act
+            kettle.RecordHour();
+
+            //Assert
+            Assert.Equal(0, kettle.TotalKilowattHours);
+        
+        }
     }// End of class
 }

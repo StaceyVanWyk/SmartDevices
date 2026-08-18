@@ -43,5 +43,38 @@ namespace SmartDevices.Test
             Assert.Contains("21", report);
         }
 
+        [Fact]
+
+        public void NewThermostat_ShouldHaveInitialTemperature()
+        {
+
+            //Arrange
+            Thermostat thermostat = new Thermostat("Living Room Thermostat");
+
+
+            //Act
+            double target = thermostat.TargetTemperature;
+            double current = thermostat.CurrentTemperature;
+
+            //Assert
+            Assert.Equal(21, target);
+            Assert.Equal(20, current);
+        }
+
+        [Fact]
+
+        public void SetTargetTemperature_ShouldUpdateTarget()
+        {
+
+            //Arrange
+            Thermostat thermostat = new Thermostat("Living Room Thermostat");
+
+
+            //Act 
+            thermostat.SetTargetTemperature(21);
+            thermostat.SetTargetTemperature(20);
+
+        }
+
     }// End of Class
 }
