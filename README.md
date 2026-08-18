@@ -31,34 +31,39 @@ Device
 │
 └── DoorSensor
 
+
+
 ## Devices
 
-### Light
+## Light
 
 - Rated power: 9 W
 - Can be switched ON and OFF
 - Tracks energy consumption
 
-### Kettle
+
+## Kettle
 
 - Rated power: 2200 W
 - Can be switched ON and OFF
 - Tracks energy consumption
 
-### Security Camera
+
+## Security Camera
 
 - Rated power: 12 W
 - Can be switched ON and OFF
 - Tracks energy consumption
 
-### Thermostat
+
+## Thermostat
 
 - Has a target temperature
 - Has a current temperature
 - Allows the target temperature to be changed
 - Provides a device report
 
-### Door Sensor
+## Door Sensor
 
 - Tracks whether the door is open
 - Records door openings
@@ -66,27 +71,33 @@ Device
 
 ## Object-Oriented Programming Concepts
 
-### Abstraction
+
+## Abstraction
+
 
 The `Device` class is an abstract base class that defines common behaviour for all devices.
 
-### Encapsulation
+
+## Encapsulation
+
 
 Device state is protected using access modifiers such as `private set` and `protected set`. This prevents outside code from directly changing certain values.
 
-### Inheritance
+## Inheritance
+
 
 Common behaviour is shared through inheritance.
 
 `Light`, `Kettle`, and `SecurityCamera` inherit from `SwitchableDevice`, while `Thermostat` and `DoorSensor` inherit directly from `Device`.
 
-### Polymorphism
+
+## Polymorphism
 
 Different device types are stored in a single `List<Device>`.
 
 Each device provides its own implementation of `Report()`.
 
-### Method Overriding
+## Method Overriding
 
 Each concrete device overrides the abstract `Report()` method from `Device`.
 
