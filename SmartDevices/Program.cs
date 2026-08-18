@@ -13,7 +13,7 @@ namespace SmartDevices
             Light light = new Light("Kitchen Light");
             Kettle kettle = new Kettle("Kettle");
             SecurityCamera camera = new SecurityCamera("Front camera");
-            Thermostat thermostat = new Thermostat("Themostat");
+            Thermostat thermostat = new Thermostat("Thermostat");
             DoorSensor door = new DoorSensor("Front Door");
 
             devices.Add(light);
@@ -34,9 +34,27 @@ namespace SmartDevices
 
                         switchable.RecordHour();
                         }
+                    
                 }
             }
 
+            foreach (Device device in devices) 
+            {
+                Console.WriteLine(device.Report());
+            }
+
+            double houseEnergy = 0;
+
+            foreach (Device device in devices)
+            {
+                if (device is SwitchableDevice switchable)
+                {
+                    houseEnergy += switchable.TotalKilowattHours;
+                }
+            }
+
+            Console.WriteLine($"House total energy: {houseEnergy:F3} KWh");
         }
+
     }
 }

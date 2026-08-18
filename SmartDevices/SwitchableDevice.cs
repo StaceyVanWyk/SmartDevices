@@ -13,6 +13,7 @@ namespace SmartDevices
         public SwitchableDevice(string name) : base(name)
         {
 
+            Status = "Off";
         }
 
         // Adding IsOn property

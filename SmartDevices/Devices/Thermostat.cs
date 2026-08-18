@@ -9,7 +9,8 @@ namespace SmartDevices.Devices
 
         public Thermostat(string name) : base(name) 
         {
-        
+            TargetTemperature = 21;
+            CurrentTemperature = 20;
         }
 
         public double TargetTemperature { get; private set; }
